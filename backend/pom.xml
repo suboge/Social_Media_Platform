@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.popo</groupId>
-    <artifactId>e_sum_social_media_platform</artifactId>
+    <artifactId>e_sun_social_media_platform</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>e_sum_social_media_platform</name>
     <description>e_sum_social_media_platform</description>
