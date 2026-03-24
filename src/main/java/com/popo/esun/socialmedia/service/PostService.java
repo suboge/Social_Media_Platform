@@ -24,6 +24,22 @@ public class PostService {
     }
 
     /**
+     * 編輯發文
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public void updatePost(Integer postId, Integer userId, String content, String image) {
+        postRepository.callUpdatePost(postId, userId, content, image);
+    }
+
+    /**
+     * 刪除發文
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public void deletePost(Integer postId, Integer userId) {
+        postRepository.callDeletePost(postId, userId);
+    }
+
+    /**
      * 取得所有發文 (查詢不需要 Transactional，或者可以設為唯讀)
      */
     @Transactional(readOnly = true)
