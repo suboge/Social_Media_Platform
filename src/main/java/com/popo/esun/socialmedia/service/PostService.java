@@ -1,0 +1,33 @@
+package com.popo.esun.socialmedia.service;
+
+
+import com.popo.esun.socialmedia.repository.PostRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Map;
+
+@Service
+@RequiredArgsConstructor
+public class PostService {
+
+    private final PostRepository postRepository;
+
+    /**
+     * 新增發文
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public void createPost(Integer userId, String content, String image) {
+        postRepository.callCreatePost(userId, content, image);
+    }
+
+    /**
+     * 取得所有發文 (查詢不需要 Transactional，或者可以設為唯讀)
+     */
+    @Transactional(readOnly = true)
+    public List<Map<String, Object>> getAllPosts() {
+        return postRepository.callGetAllPosts();
+    }
+}
