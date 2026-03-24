@@ -1,4 +1,4 @@
-package com.popo.e_sum_social_media_platform;
+package com.popo.esun.socialmedia;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
