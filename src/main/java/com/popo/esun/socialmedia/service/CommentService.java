@@ -17,7 +17,6 @@ public class CommentService {
      */
     @Transactional(rollbackFor = Exception.class)
     public void createComment(Integer userId, Integer postId, String content) {
-        // 呼叫底層 Repository 執行預存程序
         commentRepository.callCreateComment(userId, postId, content);
     }
 }

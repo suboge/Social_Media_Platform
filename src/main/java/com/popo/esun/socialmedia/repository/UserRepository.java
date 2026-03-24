@@ -26,6 +26,5 @@ public interface UserRepository extends JpaRepository<User, Integer> {
             @Param("bio") String biography
     );
 
-    // 為了後續 Spring Security 登入驗證使用
     Optional<User> findByPhoneNumber(String phoneNumber);
 }

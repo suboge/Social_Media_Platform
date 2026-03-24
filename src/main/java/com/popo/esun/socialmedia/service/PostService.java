@@ -1,6 +1,7 @@
 package com.popo.esun.socialmedia.service;
 
 
+import com.popo.esun.socialmedia.repository.CommentRepository;
 import com.popo.esun.socialmedia.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import java.util.Map;
 public class PostService {
 
     private final PostRepository postRepository;
+    private final CommentRepository commentRepository;
 
     /**
      * 新增發文
@@ -42,8 +44,25 @@ public class PostService {
     /**
      * 取得所有發文 (查詢不需要 Transactional，或者可以設為唯讀)
      */
-    @Transactional(readOnly = true)
     public List<Map<String, Object>> getAllPosts() {
-        return postRepository.callGetAllPosts();
+
+        List<Map<String, Object>> rawPosts = postRepository.callGetAllPosts();
+        List<Map<String, Object>> resultPosts = new java.util.ArrayList<>();
+
+        for (Map<String, Object> rawPost : rawPosts) {
+            Map<String, Object> modifiablePost = new java.util.HashMap<>(rawPost);
+            Object idObj = modifiablePost.get("post_id");
+
+            if (idObj != null) {
+                Integer postId = ((Number) idObj).intValue();
+
+                List<Map<String, Object>> comments = commentRepository.findCommentsByPostId(postId);
+                modifiablePost.put("comments", comments);
+            }
+
+            resultPosts.add(modifiablePost);
+        }
+
+        return resultPosts;
     }
 }

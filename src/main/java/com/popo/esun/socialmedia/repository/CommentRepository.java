@@ -8,6 +8,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Map;
+
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, Integer> {
 
@@ -19,4 +22,10 @@ public interface CommentRepository extends JpaRepository<Comment, Integer> {
             @Param("postId") Integer postId,
             @Param("content") String content
     );
+    @Query(value = "SELECT c.comment_id, c.content, c.created_at, u.user_name " +
+            "FROM comments c " +
+            "JOIN users u ON c.user_id = u.user_id " +
+            "WHERE c.post_id = :postId " +
+            "ORDER BY c.created_at ASC", nativeQuery = true)
+    List<Map<String, Object>> findCommentsByPostId(@Param("postId") Integer postId);
 }

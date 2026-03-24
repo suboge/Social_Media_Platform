@@ -3,6 +3,8 @@ package com.popo.esun.socialmedia.controller;
 
 import com.popo.esun.socialmedia.model.dto.PostRequest;
 import com.popo.esun.socialmedia.model.dto.UpdatePostRequest;
+import com.popo.esun.socialmedia.repository.CommentRepository;
+import com.popo.esun.socialmedia.repository.PostRepository;
 import com.popo.esun.socialmedia.service.PostService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +21,8 @@ import java.util.Map;
 public class PostController {
 
     private final PostService postService;
+    private final CommentRepository commentRepository;
+    private final PostRepository postRepository;
 
     /**
      * 新增發文 (HTTP POST /api/posts)
@@ -42,7 +46,6 @@ public class PostController {
 
     /**
      * 刪除發文 (HTTP DELETE /api/posts/{postId}?userId={userId})
-     * 註：刪除通常不需要 RequestBody，因此 userId 用 Query Parameter 傳遞
      */
     @DeleteMapping("/{postId}")
     public ResponseEntity<String> deletePost(
@@ -53,12 +56,24 @@ public class PostController {
         return ResponseEntity.ok("發文刪除成功");
     }
 
+    @GetMapping
+    public ResponseEntity<List<Map<String, Object>>> callgetAllPosts() {
+        return ResponseEntity.ok(postService.getAllPosts());
+    }
+
     /**
      * 取得所有發文 (HTTP GET /api/posts)
      */
-    @GetMapping
-    public ResponseEntity<List<Map<String, Object>>> getAllPosts() {
-        // RESTful 慣例：查詢成功回傳 HTTP 200 OK
-        return ResponseEntity.ok(postService.getAllPosts());
+    public List<Map<String, Object>> getAllPosts() {
+        List<Map<String, Object>> posts = postRepository.callGetAllPosts();
+        for (Map<String, Object> post : posts) {
+            Integer postId = (Integer) post.get("post_id");
+
+            List<Map<String, Object>> comments = commentRepository.findCommentsByPostId(postId);
+
+            post.put("comments", comments);
+        }
+
+        return posts;
     }
 }
