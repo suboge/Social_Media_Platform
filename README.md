@@ -1,4 +1,4 @@
-# 🏦 E.SUN Social Media Platform
+# Social Media Platform
 
 這是一個基於 Vue 3 與 Spring Boot 開發的簡易社群媒體平台。本專案嚴格遵守實作測驗要求，落實了「三層式實體架構」與「後端邏輯分層設計」，並整合 PostgreSQL 的預存程序 (Stored Procedure) 進行資料存取，同時確保使用者資料與操作的安全性。
 
