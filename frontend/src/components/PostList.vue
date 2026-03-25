@@ -19,9 +19,15 @@
         {{ post.content }}
       </div>
       
-      <div class="post-footer">
-        <button class="btn-text">💬 留言</button>
-        <button class="btn-text text-red" v-if="post.user_id === currentUserId" @click="handleDelete(post.post_id)">🗑 刪除</button>
+<div class="post-footer">
+        
+        <span v-if="post.user_name === 'popo'" class="author-actions" style="display: flex; gap: 16px;">
+          
+          <button class="btn-text" @click="handleEdit(post)">✏️ 修改</button>
+          <button class="btn-text" @click="handleDelete(post.post_id)">🗑 刪除</button>
+          
+        </span>
+        
       </div>
       
       <div class="comment-section">
@@ -47,7 +53,7 @@
 import { ref, onMounted, reactive } from 'vue'
 import axios from 'axios'
 
-const currentUserId = ref(1) 
+const currentUserId = ref(Number(localStorage.getItem('userId')))
 const posts = ref([])
 const newPost = reactive({
   content: '',
@@ -65,13 +71,43 @@ const fetchPosts = async () => {
 
 // 新增發文
 const handleCreatePost = async () => {
+  const userId = Number(localStorage.getItem('userId')); 
+  console.log("準備發文！目前抓到的 userId 是:", userId);
+
+  if (!userId || userId === 0) {
+    alert("抓不到使用者 ID，請確認你登入時存進 localStorage 的名稱是不是 'userId'！");
+    return;
+  }
+
   try {
-    await axios.post('/api/posts', newPost)
-    newPost.content = '' // 清空輸入框
-    await fetchPosts()   // 重新刷列表
-    alert('發布成功！')
+    await axios.post('/api/posts', {
+      content: newPost.content,
+      userId: userId
+    }); 
+    newPost.content = '';
+    await fetchPosts();
+    alert('發布成功！');
   } catch (error) {
-    alert('發布失敗')
+    console.error('發布失敗的詳細原因:', error);
+    alert('發布失敗，請打開 F12 看 Console 的紅字！');
+  }
+}
+
+const handleEdit = async (post) => {
+  const newContent = prompt('請輸入修改後的內容：', post.content)
+  
+  if (newContent !== null && newContent.trim() !== '') {
+    try {
+      await axios.put(`/api/posts/${post.post_id}`, {
+        userId: currentUserId.value,
+        content: newContent
+      })
+      alert('修改成功！')
+      await fetchPosts() // 重新刷新畫面
+    } catch (error) {
+      console.error('修改失敗:', error)
+      alert('修改失敗，請檢查後端 API 是否有寫好')
+    }
   }
 }
 
@@ -94,25 +130,22 @@ const formatDate = (dateStr) => {
 onMounted(() => {
   fetchPosts()
 })
+
 const commentInputs = ref({}) // 用來存放每一篇文對應的輸入內容
 
 const handleSendComment = async (postId) => {
-  // 1. 第一步：先去抓取輸入框的值，並宣告成 content
   const content = commentInputs.value[postId];
 
-  // 2. 第二步：這時候才能安心使用它！
   console.log("準備發送留言！文章ID:", postId, "留言內容:", content);
 
-  // 3. 第三步：檢查是不是空留言
   if (!content || content.trim() === '') {
       alert("請輸入留言內容！");
       return;
   }
   
   try {
-      // 4. 最後才是發送 axios 請求
       const response = await axios.post('/api/comments', {
-          userId: 1, // 記得換成真實的使用者ID
+          userId: currentUserId.value,
           postId: postId,
           content: content
       });

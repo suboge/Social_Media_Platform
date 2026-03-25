@@ -5,34 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18067b22-1bd6-47ba-8b1d-d6010bae2801" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/ESumSocialMediaPlatformApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/ESumSocialMediaPlatformApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/controller/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/model/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/model/dto/CommentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/model/dto/CommentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/model/dto/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/model/dto/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/model/dto/PostRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/model/dto/PostRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/model/dto/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/model/dto/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/model/dto/UpdatePostRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/model/dto/UpdatePostRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/repository/CommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/repository/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/popo/esun/socialmedia/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/popo/esun/socialmedia/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/popo/esun/socialmedia/ESumSocialMediaPlatformApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/popo/esun/socialmedia/ESumSocialMediaPlatformApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/PostList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/PostList.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +43,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -77,21 +54,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.ESumSocialMediaPlatformApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.e_sum_social_media_platform [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.e_sum_social_media_platform [install].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ESumSocialMediaPlatformApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/pochun/Desktop/e_sun_project/e_sun_social_media_platform&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "JUnit.ESumSocialMediaPlatformApplicationTests.executor": "Run",
+    "Maven.backend [clean].executor": "Run",
+    "Maven.backend [install].executor": "Run",
+    "Maven.e_sum_social_media_platform [clean].executor": "Run",
+    "Maven.e_sum_social_media_platform [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ESumSocialMediaPlatformApplication.executor": "Run",
+    "git-widget-placeholder": "m",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/pochun/Desktop/e_sun_project/e_sun_social_media_platform"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend" />

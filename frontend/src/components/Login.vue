@@ -30,14 +30,19 @@ const loginForm = reactive({
 
 const handleLogin = async () => {
   try {
-    // 這裡我們假設後端已經有一個 /api/users/login (或是你現在直接測通)
-    // 暫時邏輯：如果註冊過，我們直接呼叫 API 驗證
     const response = await axios.post('/api/users/login', loginForm)
     
-    // 登入成功，將使用者資訊傳回給 App.vue
+    // 💡 抓取後端回傳的 ID (防呆：看後端回傳的是 userId 還是 user_id)
+    const loginId = response.data.userId || response.data.user_id || response.data.id;
+    
+    // 💡 關鍵修復：把 ID 存進瀏覽器記憶體！這樣 PostList 才抓得到
+    localStorage.setItem('userId', loginId);
+    localStorage.setItem('userName', response.data.userName || response.data.user_name); // 順便存名字
+    
     alert('歡迎回來！')
-    emit('login-success', response.data) // 假設回傳包含 userId, userName
+    emit('login-success', response.data) 
   } catch (error) {
+    console.error('登入錯誤:', error)
     alert('登入失敗，請檢查帳號密碼')
   }
 }
