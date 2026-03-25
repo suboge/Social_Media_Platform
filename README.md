@@ -25,6 +25,38 @@
 
 ---
 
+如何啟動專案 (How to Run)
+步驟一：準備資料庫環境
+請準備 PostgreSQL 17 環境，並建立相對應的資料庫 (例如 esun_social_db)。
+
+請執行專案提供的 SQL 腳本建立 users, posts, comments 資料表。
+
+請務必建立專案所需的預存程序 (Stored Procedures) 與 函數 (Functions)，包含：發布貼文、新增留言、以及連表查詢所有貼文 (fn_get_all_posts 需包含 user_id 回傳以供前端權限驗證)。
+
+步驟二：啟動後端 (Backend)
+進入 backend 目錄。
+
+開啟 src/main/resources/application.properties，確認資料庫的 URL、帳號、密碼設定是否與您的本地環境一致。
+
+透過 IDE 開啟 backend 專案，執行 ESumSocialMediaPlatformApplication.java。
+
+伺服器預設將於 http://localhost:8080 啟動。
+
+步驟三：啟動前端 (Frontend)
+開啟終端機，進入 frontend 目錄：
+
+Bash
+cd frontend
+安裝所需依賴套件：
+
+Bash
+npm install
+啟動 Vite 開發伺服器：
+
+Bash
+npm run dev
+開啟瀏覽器訪問終端機顯示的網址，即可開始體驗系統。
+
 ## 📂 專案目錄結構
 
 ```text
