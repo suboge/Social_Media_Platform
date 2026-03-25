@@ -15,7 +15,7 @@
 - **資料層 (Repository)**：負責與資料庫溝通，呼叫 Stored Procedure 與 Functions。
 - **共用層 (Model/Config)**：包含 Entity、DTO 物件轉換，以及 Spring Security 密碼加密等全域設定。
 
-- 實作功能清單
+## 實作功能清單
 [x] 使用者登入 (驗證密碼 Hash)
 
 [x] 瀏覽所有貼文與對應留言
